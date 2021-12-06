@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Sign in to BugTracker', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w300)),
+            const Text('Register in to BugTracker', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.w300)),
             const SizedBox(height: 30),
             Container(
               width: 350,
@@ -21,26 +21,27 @@ class LoginScreen extends StatelessWidget {
                 color:  Colors.white10,
                 borderRadius: BorderRadius.circular(3)
               ),
-              child: _form()
+              child: _form(),
             ),
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, 'register_screen'),
-              child: const Text('New in BugTracker? Create an account', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.w300))
+              child: const Text('Do your have an Account? go to Login', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.w300))
             )
           ],
         ),
       ),
     );
   }
-  _form() {
+    _form() {
 
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          textFormfield(title: 'Username or email address'),
+          textFormfield(title: 'Username'),
+          textFormfield(title: 'E-mail address'),
           textFormfield(title: 'Password'),
           const SizedBox(height: 20),
           button(title: 'Sign In'),
