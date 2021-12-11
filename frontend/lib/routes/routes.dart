@@ -5,6 +5,6 @@ import 'package:frontend/register/register_screen.dart';
 
 final routes = {
 
-  'login_screen' : (BuildContext context) => const LoginScreen(),
-  'register_screen' : (BuildContext context) => const RegisterScreen(),
+  'login_screen' : (BuildContext context) => LoginScreen(),
+  'register_screen' : (BuildContext context) =>  RegisterScreen(),
 };

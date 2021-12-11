@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/widgets/textformfield_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+
+  final  nameController = TextEditingController();
+  final  emailController = TextEditingController();
+  final  passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             GestureDetector(
-              onTap: () => Navigator.pushNamed(context, 'register_screen'),
+              onTap: () => Navigator.pushNamed(context, 'login_screen'),
               child: const Text('Do your have an Account? go to Login', style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.w300))
             )
           ],
@@ -40,9 +44,21 @@ class RegisterScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          textFormfield(title: 'Username'),
-          textFormfield(title: 'E-mail address'),
-          textFormfield(title: 'Password'),
+          TextFormFieldWidget(
+            title: 'Username',
+            controller: nameController,
+            keyboardType: TextInputType.name,
+          ),
+          TextFormFieldWidget(
+            title: 'E-mail address',
+            controller: emailController,
+            keyboardType: TextInputType.emailAddress,
+          ),
+          TextFormFieldWidget(
+            title: 'Password',
+            controller: passwordController,
+            keyboardType: TextInputType.visiblePassword,
+          ),
           const SizedBox(height: 20),
           button(title: 'Sign In'),
           const SizedBox(height: 20),
